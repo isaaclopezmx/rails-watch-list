@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+<%= render @list %>
+<div>
+  <%= link_to "Back to Lists", lists_path %> |
+  <%= link_to "Add Bookmark", new_list_bookmark_path(@list)%>
+  <p><strong>Bookmarks</strong></p>
+  <ul class="list-group">
+    <% @list.bookmarks.each do |b| %>
+      <li class="list-group-item">
+        <h2><%= b.movie.title %></h2>
+        <p><%= b.movie.overview %></p>
+        <p><%= b.movie.rating %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
